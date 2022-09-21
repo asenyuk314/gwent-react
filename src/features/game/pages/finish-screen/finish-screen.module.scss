@@ -1,0 +1,10 @@
+@import '../../colors.scss';
+
+.FinishScreen {
+  background-color: $LIGHT_GREEN_COLOR;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}

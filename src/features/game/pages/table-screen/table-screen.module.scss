@@ -1,0 +1,40 @@
+@import '../../colors.scss';
+
+.TableScreen {
+  background-color: $DARK_GREEN_COLOR;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  .ComputerWrapper {
+    position: relative;
+
+    .SkipSign {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      background-color: $LIGHT_GREEN_COLOR;
+      padding: 5px;
+      width: max-content;
+    }
+  }
+
+  .Hand {
+    display: flex;
+  }
+
+  .Table {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+
+    .Score {
+      background-color: $LIGHT_GREEN_COLOR;
+      padding: 50px;
+    }
+  }
+}
