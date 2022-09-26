@@ -1,0 +1,9 @@
+@import 'src/styles/colors.scss';
+@import 'src/styles/mixins.scss';
+
+.CardFace {
+  @include card;
+  @include button;
+  background-color: $LIGHT_GREEN_COLOR;
+  color: $DARK_BROWN_COLOR;
+}

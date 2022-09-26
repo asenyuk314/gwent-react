@@ -1,0 +1,10 @@
+@import 'src/styles/colors.scss';
+@import 'src/styles/mixins.scss';
+
+.StyledButton {
+  @include button;
+  border-radius: $BORDER_RADIUS;
+  padding: 10px 20px;
+  background-color: $LIGHT_BROWN_COLOR;
+  color: $LIGHT_GREEN_COLOR;
+}

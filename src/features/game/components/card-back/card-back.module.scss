@@ -1,0 +1,8 @@
+@import 'src/styles/colors.scss';
+@import 'src/styles/mixins.scss';
+
+.CardBack {
+  @include card;
+  background-color: $DARK_BROWN_COLOR;
+  color: $LIGHT_GREEN_COLOR;
+}

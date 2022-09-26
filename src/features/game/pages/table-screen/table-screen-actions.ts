@@ -29,15 +29,10 @@ const togglePlayer = () => (dispatch: AppDispatch, getState: () => RootState) =>
 
   if (!players[nextPlayerName].skippedTurn) {
     dispatch(setCurrentPlayer(nextPlayerName))
-    // TODO: отрефакторить
-    if (nextPlayerName === 'computer') {
-      dispatch(computerTurn())
-    }
   } else if (players[currentPlayerName].skippedTurn) {
     dispatch(finishTurn())
   }
-  // TODO: отрефакторить
-  if (currentPlayerName === 'computer' && !players.computer.skippedTurn) {
+  if (!players.computer.skippedTurn && (nextPlayerName === 'computer' || players.user.skippedTurn)) {
     dispatch(computerTurn())
   }
 }

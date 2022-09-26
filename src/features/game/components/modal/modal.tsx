@@ -2,6 +2,7 @@ import React, { memo, useCallback } from 'react'
 
 import { useAppDispatch, useAppSelector } from 'src/app/hooks'
 import { getGameState } from '../../game-selectors'
+import { StyledButton } from '../styled-button'
 import { onStartNextTurnHandler } from './modal-actions'
 import styles from './modal.module.scss'
 
@@ -21,7 +22,9 @@ export const Modal = memo(() => {
       <div>{`User ${user.score}:${computer.score} Computer`}</div>
       <div>{`${user.power}:${computer.power}`}</div>
       <div>
-        <button onClick={onButtonClickHandler}>Ok</button>
+        <StyledButton onClick={onButtonClickHandler}>
+          Ok
+        </StyledButton>
       </div>
     </div>
   ) : null

@@ -1,40 +1,60 @@
-@import '../../colors.scss';
+@import 'src/styles/colors.scss';
+@import 'src/styles/dimensions.scss';
 
 .TableScreen {
   background-color: $DARK_GREEN_COLOR;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(5, 1fr);
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
 
-  .ComputerWrapper {
+  & > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .HandWrapper {
+    grid-column: 1 / 4;
+    padding: 10px 50px;
     position: relative;
+    overflow: hidden;
+
+    .Hand {
+      display: flex;
+      align-items: center;
+      overflow-x: scroll;
+      padding: 10px;
+    }
 
     .SkipSign {
       position: absolute;
-      top: 0;
-      left: 0;
       z-index: 1;
       background-color: $LIGHT_GREEN_COLOR;
-      padding: 5px;
-      width: max-content;
+      padding: 10px 20px;
+      border-radius: $BORDER_RADIUS;
+      box-shadow: $SHADOW;
     }
   }
 
-  .Hand {
-    display: flex;
+  .MiddleElement {
+    grid-column-start: 2;
   }
 
-  .Table {
+  .PassButton {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    padding: 0;
+  }
+
+  .Score {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    width: 100%;
-
-    .Score {
-      background-color: $LIGHT_GREEN_COLOR;
-      padding: 50px;
-    }
+    background-color: $LIGHT_GREEN_COLOR;
+    padding: 10px;
+    border-radius: $BORDER_RADIUS;
   }
 }
