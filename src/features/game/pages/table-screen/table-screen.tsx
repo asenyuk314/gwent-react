@@ -2,7 +2,7 @@ import React, { memo, useCallback } from 'react'
 
 import { useAppDispatch, useAppSelector } from 'src/app/hooks'
 import { CardBack, CardFace, StyledButton } from 'src/features/game/components'
-import { skipTurn } from './table-screen-actions'
+import { skipTurn } from '../../game-actions'
 import { getGameState } from '../../game-selectors'
 import styles from './table-screen.module.scss'
 

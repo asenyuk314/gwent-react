@@ -17,9 +17,19 @@ export const getPlayerNames = createSelector(
   players => Object.keys(players) as PlayerNames[]
 )
 
+export const getComputerHand = createSelector(
+  getPlayers,
+  players => players.computer.hand
+)
+
 export const getIsGameFinished = createSelector(
   getGameState,
   gameState => !gameState.turnIsFinished
     && (gameState.turnNumber > ROUNDS_NUMBER.totalRounds
     || some(gameState.players, ['score', ROUNDS_NUMBER.roundsToWin]))
+)
+
+export const getCurrentPlayerName = createSelector(
+  getGameState,
+  gameState => gameState.currentPlayerName
 )

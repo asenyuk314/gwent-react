@@ -1,8 +1,7 @@
 import React, { memo, useCallback } from 'react'
 
 import { useAppDispatch } from 'src/app/hooks'
-// TODO: переместить action повыше
-import { onPlayCardHandler } from '../../pages/table-screen/table-screen-actions'
+import { onPlayCardHandler } from 'src/features/game/game-actions'
 import { CardFaceProps } from './card-face-interfaces'
 import styles from './card-face.module.scss'
 

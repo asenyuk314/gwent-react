@@ -21,3 +21,17 @@
     cursor: pointer;
   }
 }
+
+@mixin info-block {
+  background-color: $LIGHT_GREEN_COLOR;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  & > div, > button {
+    margin: 15px 0;
+    &:first-child {
+      font-size: $BIG_FONT_SIZE;
+    }
+  }
+}

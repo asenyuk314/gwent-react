@@ -5,7 +5,6 @@ import { DECK_WITH_CARDS } from './game-constants'
 import { GameState, Player, PlayerNames } from './game-interfaces'
 
 // INITIAL STATE
-
 const INITIAL_PLAYER: Player = {
   score: 0,
   power: 0,
@@ -25,7 +24,6 @@ const INITIAL_STATE: GameState = {
 }
 
 // ACTION PAYLOAD INTERFACES
-
 interface TakeCardsPayload {
   playerName: PlayerNames
   numberOfCards: number
@@ -37,7 +35,6 @@ interface PlayCardPayload {
 }
 
 // SLICE
-
 const gameSlice = createSlice({
   name: 'game',
   initialState: INITIAL_STATE,
@@ -90,6 +87,15 @@ const gameSlice = createSlice({
 })
 
 export const {
-  actions: { finishTurn, playCard, resetState, setCurrentPlayer, shuffleDecks, skipPlayerTurn, startNextTurn, takeCards },
+  actions: {
+    finishTurn,
+    playCard,
+    resetState,
+    setCurrentPlayer,
+    shuffleDecks,
+    skipPlayerTurn,
+    startNextTurn,
+    takeCards
+  },
   reducer: gameReducer
 } = gameSlice

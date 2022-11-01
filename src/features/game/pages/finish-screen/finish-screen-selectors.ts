@@ -15,7 +15,7 @@ export const getWinner = createSelector(
 
 export const getResultMessage = createSelector(
   getWinner,
-  winner => winner ? `${capitalize(winner)} win` : 'draw'
+  winner => winner ? `${capitalize(winner)} win` : 'Draw'
 )
 
 export const getScoreMessage = createSelector(

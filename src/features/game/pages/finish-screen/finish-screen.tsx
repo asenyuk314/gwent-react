@@ -1,6 +1,7 @@
 import React, { memo, useCallback, useMemo, useEffect } from 'react'
 
 import { useAppDispatch, useAppSelector } from 'src/app/hooks'
+import { StyledButton } from 'src/features/game/components'
 import { playAgain } from './finish-screen-actions'
 import { AUDIO_BY_PLAYER_NAME } from './finish-screen-constants'
 import { getResultMessage, getScoreMessage, getWinner } from './finish-screen-selectors'
@@ -17,7 +18,7 @@ export const FinishScreen = memo(() => {
     if (audio) {
       audio.play()
     }
-  })
+  }, [audio])
 
   const onPlayAgainClickHandler = useCallback(() => {
     dispatch(playAgain())
@@ -27,7 +28,7 @@ export const FinishScreen = memo(() => {
     <div className={styles.FinishScreen}>
       <div>{resultMessage}</div>
       <div>{scoreMessage}</div>
-      <button onClick={onPlayAgainClickHandler}>Play again</button>
+      <StyledButton onClick={onPlayAgainClickHandler}>Play again</StyledButton>
     </div>
   )
 })
