@@ -1,4 +1,4 @@
-import React, { memo, useCallback } from 'react'
+import React, { memo } from 'react'
 
 import { useAppDispatch, useAppSelector } from 'src/app/hooks'
 import { getGameState } from '../../game-selectors'
@@ -13,9 +13,9 @@ export const Modal = memo(() => {
     players: { computer, user },
   } = useAppSelector(getGameState)
 
-  const onButtonClickHandler = useCallback(() => {
+  const onButtonClickHandler = () => {
     dispatch(onStartNextTurnHandler())
-  }, [dispatch])
+  }
 
   return turnIsFinished ? (
     <div className={styles.Modal}>

@@ -1,4 +1,4 @@
-import React, { memo, useCallback } from 'react'
+import React, { memo } from 'react'
 
 import { useAppDispatch } from 'src/app/hooks'
 import { onPlayCardHandler } from 'src/features/game/game-actions'
@@ -7,11 +7,11 @@ import styles from './card-face.module.scss'
 
 export const CardFace = memo(({ disabled, index, power }: CardFaceProps) => {
   const dispatch = useAppDispatch()
-  const onCardClickHandler = useCallback(() => {
+  const onCardClickHandler = () => {
     if (!disabled && typeof index === 'number') {
       dispatch(onPlayCardHandler('user', index))
     }
-  }, [disabled, dispatch, index])
+  }
 
   return (
     <button

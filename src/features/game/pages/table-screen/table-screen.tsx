@@ -1,4 +1,4 @@
-import React, { memo, useCallback } from 'react'
+import React, { memo } from 'react'
 
 import { useAppDispatch, useAppSelector } from 'src/app/hooks'
 import { CardBack, CardFace, StyledButton } from 'src/features/game/components'
@@ -10,9 +10,9 @@ export const TableScreen = memo(() => {
   const dispatch = useAppDispatch()
   const { turnNumber, players: { computer, user } } = useAppSelector(getGameState)
 
-  const onSkipTurnHandler = useCallback(() => {
+  const onSkipTurnHandler = () => {
     dispatch(skipTurn('user'))
-  }, [dispatch])
+  }
 
   return (
     <div className={styles.TableScreen}>
